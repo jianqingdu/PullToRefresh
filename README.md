@@ -21,24 +21,24 @@ and [Alex Zielenski's ScrollToRefresh](https://github.com/alexzielenski/ScrollTo
   - release-to-refresh.png.
 3. Add a TableView or OutlineView from the Object Library to your nib file and subclass the ScrollView as a PullToRefreshScrollView.
 4. Create an outlet in your controller:
-  ``` objective-c
+  <pre><code>
   @property (weak) IBOutlet PullToRefreshScrollView *ptrScrollView;
-  ```
+  </code></pre>
 
 5. Set the delegate:
-  ``` objective-c
+  <pre><code>
   \- (void)awakeFromNib {
     NSLog(@"awake from nib");
     [_ptrScrollView setDelegate:self];
   }
-  ```
+  </code></pre>
 
 6. Add the delegate method:
-  ``` objective-c
+  <pre><code>
   \- (void)ptrScrollViewDidTriggerRefresh:(id)sender {
     NSLog(@"This is called by the PullToRefresh delegate protocol");
   }
-  ```
+  </code></pre>
 
 7. Customize the delegate method as needed.
 
