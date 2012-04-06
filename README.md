@@ -8,7 +8,7 @@ and [Alex Zielenski's ScrollToRefresh](https://github.com/alexzielenski/ScrollTo
 
 ## Key Features
 * Elastic Scroll
-* Added optional delegate protocol method: ptrScrollViewDidTriggerRefresh:(id)sender
+* Added optional delegate protocol method: <code>ptrScrollViewDidTriggerRefresh:(id)sender</code>
   - This method gets called when the user scrolls beyond the set bounds.
 
 ## Directions
@@ -21,24 +21,24 @@ and [Alex Zielenski's ScrollToRefresh](https://github.com/alexzielenski/ScrollTo
   - release-to-refresh.png.
 3. Add a TableView or OutlineView from the Object Library to your nib file and subclass the ScrollView as a PullToRefreshScrollView.
 4. Create an outlet in your controller:
-  <pre>
+  <code>
   @property (weak) IBOutlet PullToRefreshScrollView *ptrScrollView;
-  </pre>
+  </code>
 
 5. Set the delegate:
-  <pre>'''
+  <code>
   - (void)awakeFromNib {
     NSLog(@"awake from nib");
     [_ptrScrollView setDelegate:self];
-  }'''
-  </pre>
+  }</code>
 
 6. Add the delegate method:
-  <pre>'''
+  <code>
   - (void)ptrScrollViewDidTriggerRefresh:(id)sender {
     NSLog(@"This is called by the PullToRefresh delegate protocol");
-  }'''
-  </pre>
+  }
+  </code>
+
 7. Customize the delegate method as needed.
 
 ## License
